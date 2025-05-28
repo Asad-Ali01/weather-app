@@ -1,158 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-</head>
-<body>
-   
-    <section class="loader" style="display: none;">
-        <div class="dots">
-            <span style="--i:1;"></span>
-            <span style="--i:2;"></span>
-            <span style="--i:3;"></span>
-            <span style="--i:4;"></span>
-            <span style="--i:5;"></span>
-            <span style="--i:6;"></span>
-            <span style="--i:7;"></span>
-            <span style="--i:8;"></span>
-            <span style="--i:9;"></span>
-            <span style="--i:10;"></span>
-            <span style="--i:11;"></span>
-            <span style="--i:12;"></span>
-            <span style="--i:13;"></span>
-            <span style="--i:14;"></span>
-            <span style="--i:15;"></span>
-        </div>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section class="loader" style="display: none">
+      <div class="dots">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 15"></span>
+      </div>
     </section>
-   <!-- Nav section start -->
+    <!-- Nav section start -->
     <nav>
-        <div class="hamburger">
-            <div class="bar"></div>
-        </div>
-        <ul>
-        <li >
-            <i style="color: #1890FF; font-size: 30px;" class="fas fa-cloud"></i>
-            <a class="logo" href="#">Weather</a>
+      <div class="hamburger">
+        <div class="bar"></div>
+      </div>
+      <ul>
+        <li>
+          <i style="color: #1890ff; font-size: 30px" class="fas fa-cloud"></i>
+          <a class="logo" href="#">Weather</a>
         </li>
-        <li><a href="#weather">Weather</a> </li>
+        <li><a href="#weather">Weather</a></li>
         <li><a href="#">Weather History</a></li>
-
-    </ul>
+      </ul>
     </nav>
-     <!-- Nav section end -->
-      <!-- Weather section start -->
-       <section id="weather">
-       
-        <div class="col">
-           
+    <!-- Nav section end -->
+    <!-- Weather section start -->
+    <section id="weather">
+      <div class="col">
         <div class="col-left">
-            <div class="heading"><h2>Weather</h2></div>
-        <div class="userSection">
+          <div class="heading"><h2>Weather</h2></div>
+          <div class="userSection">
             <ul>
-                <li class="active zip">Zip Code</li>
-                <li class="city">City Name</li>
-                <li class="geographic">Geographic Cordinator</li>
+              <li class="active zip">Zip Code</li>
+              <li class="city">City Name</li>
+              <li class="geographic">Geographic Cordinator</li>
             </ul>
-          <form class="allForm" id="zipCountryCode" action="#">
-            <input type="text" name="zipcode" maxlength="5"  id="zipCode" placeholder="Enter Zip Code" required>
-            <input type="text" name="countryCode" maxlength="2" id="countryCode" placeholder="Enter Country Code" required>
-            <input type="submit" value="Check">
-            <p><span class="note">Note.</span> Check weather using city and country name or geographic coordinates. ZIP code method is not supported.</p>
+            <form class="allForm" id="zipCountryCode" action="#">
+              <input
+                type="text"
+                name="zipcode"
+                maxlength="5"
+                id="zipCode"
+                placeholder="Enter Zip Code"
+                required
+              />
+              <input
+                type="text"
+                name="countryCode"
+                maxlength="2"
+                id="countryCode"
+                placeholder="Enter Country Code"
+                required
+              />
+              <input type="submit" value="Check" />
+              <p>
+                <span class="note">Note.</span> Check weather using city and
+                country name or geographic coordinates. ZIP code method is not
+                supported.
+              </p>
+            </form>
+            <form class="allForm" id="cityCountry" action="#">
+              <input
+                type="text"
+                name="city"
+                id="cityName"
+                placeholder="Enter City Name"
+              />
+              <input
+                type="text"
+                name="countryName"
+                id="countryName"
+                placeholder="Enter Country Name"
+              />
+              <input type="submit" value="Check" />
+              <p>
 
-           
-          </form>
-          <form class="allForm" id="cityCountry" action="#">
-            <input type="text" name="city" id="cityName" placeholder="Enter City Name" >
-            <input type="text" name="countryName" id="countryName" placeholder="Enter Country Name" >
-            <input type="submit" value="Check">
-          </form>
-          <form class="allForm" id="geographicCordinator" action="#">
-            <input type="text" name="latitude" id="latitude" placeholder="Enter Latitude" >
-            <input type="text" name="longitude" id="longitude" placeholder="Enter Longitude" >
-            <input type="submit" value="Check">
-          </form>
+                <span class="note">Note:</span> Please write the first letter of the country in uppercase. For example, for India (e.g., India), and for the United States (e.g., United States).
+              </p>
+            </form>
+            <form class="allForm" id="geographicCordinator" action="#">
+              <input
+                type="text"
+                name="latitude"
+                id="latitude"
+                placeholder="Enter Latitude"
+              />
+              <input
+                type="text"
+                name="longitude"
+                id="longitude"
+                placeholder="Enter Longitude"
+              />
+              <input type="submit" value="Check" />
+            </form>
+          </div>
         </div>
-    </div>
-    <div class="col-right" style="display: none;">
-        <div class="col-right-data">
+        <div class="col-right" style="display: none">
+          <div class="col-right-data">
             <div class="heading">
-                <h3>Weather</h3>
+              <h3>Weather</h3>
             </div>
             <div class="countryTopInfo">
-            <div class="countryInfo"> 
-                <div>  
-                <p class="city-country"><span class="cityChange"></span> ,<span class="countryChange"> </span>. <br> Weather  As of</p>
-                <p class="countryTime"></p>
-            </div>
+              <div class="countryInfo">
                 <div>
-                <p><span class="temperature"></span>&deg;</p>
-            </div>
-            </div>
-            
-            <div class="weatherImg">
+                  <p class="city-country">
+                    <span class="cityChange"></span> ,<span
+                      class="countryChange"
+                    >
+                    </span
+                    >. <br />
+                    Weather As of
+                  </p>
+                  <p class="countryTime"></p>
+                </div>
+                <div>
+                  <p><span class="temperature"></span>&deg;</p>
+                </div>
+              </div>
 
+              <div class="weatherImg"></div>
             </div>
+            <div class="countryDownInfo">
+              <h2 class="atmosphericCondition"></h2>
+              <div>
+                <h2>High/Low</h2>
+                <p class="HighLow">
+                  <span class="highTemp"></span>&deg;,
+                  <span class="lowTemp"></span>&deg;
+                </p>
+              </div>
+              <div>
+                <h2>Humidity</h2>
+                <p><span class="humidity"></span> %</p>
+              </div>
+              <div>
+                <h2>Pressure</h2>
+                <p><span class="pressure"></span> hPa</p>
+              </div>
+              <div>
+                <h2>Visibility</h2>
+                <p><span class="visibility"></span> Km</p>
+              </div>
+              <div>
+                <h2>Wind</h2>
+                <p><span class="wind"></span> km/hr</p>
+              </div>
+              <div>
+                <h2>Wind Direction</h2>
+                <p><span class="windDirection"></span>&deg; deg</p>
+              </div>
+              <div>
+                <h2>Sunrise</h2>
+                <p class="sunrise"></p>
+              </div>
+              <div>
+                <h2>Sunset</h2>
+                <p class="sunset"><span></span></p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="countryDownInfo">
-            <h2 class="atmosphericCondition"></h2>
-            <div>
-            <h2>High/Low</h2>
-            <p class="HighLow"><span class="highTemp"></span>&deg;, <span class="lowTemp"></span>&deg;</p>
-        </div>
-        <div>
-            <h2>Humidity</h2>
-            <p><span class="humidity"></span> %</p>
-        </div>
-        <div>
-            <h2>Pressure</h2>
-            <p ><span class="pressure"></span> hPa</p>
-        </div>
-        <div>
-            <h2>Visibility</h2>
-            <p ><span class="visibility"></span> Km</p>
-        </div>
-        <div>
-            
-            <h2>Wind</h2>
-            <p ><span class="wind"></span> km/hr</p>
-        </div>
-        <div>
-            <h2>Wind Direction</h2>
-            <p ><span class="windDirection"></span>&deg; deg</p>
-        </div>
-        <div>
-            <h2>Sunrise</h2>
-            <p class="sunrise"></p>
-        </div>
-        <div>
-            <h2>Sunset</h2>
-            <p class="sunset"><span></span></p>
-        </div>
-        </div>
-        </div>
-    </div>
-</div>
-  
-
-  </section>
-       </section>
-      <!-- Weather section end -->
-       <!-- Footer start -->
-        <footer>
-            <div>
-            <i style="color: #1890FF; font-size: 26px;" class="fas fa-cloud"></i>
-            <a class="logo" href="#">Weather</a>
-        </div>
-        <div class="copyright">Copyright © 2025 Asad</div>
-        </footer>
-       <!-- Footer end -->
-    <script type="module" src="script.js"></script>
-</body>
+      </div>
+    </section>
+    <!-- Weather section end -->
+    <!-- Footer start -->
+    <footer>
+      <div>
+        <i style="color: #1890ff; font-size: 26px" class="fas fa-cloud"></i>
+        <a class="logo" href="#">Weather</a>
+      </div>
+      <div class="copyright">Copyright © 2025 Asad</div>
+    </footer>
+    <!-- Footer end -->
+    <script type="module" src="./script.js"></script>
+  </body>
 </html>
