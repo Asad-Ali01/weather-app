@@ -232,8 +232,7 @@ export async function getWeatherData({
     });
     zip.classList.add("active");
     showloader();
-    const formattedCountry = countryValue ? 
-    countryValue.charAt(0).toUpperCase() + countryValue.slice(1).toLowerCase() : countryValue;
+    
 
     let response;
     if (cityValue && countryValue) {
@@ -255,7 +254,7 @@ export async function getWeatherData({
 
     const data = await response.json();
     if (cityValue && countryValue) {
-      if (!countries.hasOwnProperty(formattedCountry)) {
+      if (data.sys.country !== countries[countryValue]) {
         alert("Api error");
         hideloader();
       }
